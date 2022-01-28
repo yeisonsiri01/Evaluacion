@@ -16,7 +16,7 @@
                         <span class="card-title">Create Study</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('studies.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('study.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
                             @include('study.form')

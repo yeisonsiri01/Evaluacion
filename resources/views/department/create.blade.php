@@ -16,7 +16,7 @@
                         <span class="card-title">Create Department</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('departments.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('department.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
                             @include('department.form')

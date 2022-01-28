@@ -31,7 +31,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        $employee = new Employee();
+        $employee = new employee();
         return view('employee.create', compact('employee'));
     }
 
@@ -44,10 +44,10 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
         request()->validate(Employee::$rules);
-
-        $employee = Employee::create($request->all());
-
-        return redirect()->route('employees.index')
+        
+        $employee = Employee::create($request->all())->timestamps = false;
+        
+        return redirect()->route('employee.index')
             ->with('success', 'Employee created successfully.');
     }
 
@@ -90,7 +90,7 @@ class EmployeeController extends Controller
 
         $employee->update($request->all());
 
-        return redirect()->route('employees.index')
+        return redirect()->route('employee.index')
             ->with('success', 'Employee updated successfully');
     }
 
@@ -103,7 +103,7 @@ class EmployeeController extends Controller
     {
         $employee = Employee::find($id)->delete();
 
-        return redirect()->route('employees.index')
+        return redirect()->route('employee.index')
             ->with('success', 'Employee deleted successfully');
     }
 }

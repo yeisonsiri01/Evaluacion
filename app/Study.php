@@ -18,7 +18,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Study extends Model
 {
-    
+  
+  public $timestamps = false;
+
     static $rules = [
 		'employeeId' => 'required',
 		'studiename' => 'required',

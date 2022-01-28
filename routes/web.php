@@ -21,6 +21,6 @@ Route::get('/', function () {
 
 //Auth::routes();
 
-Route::resource('department', App\Http\Controllers\DepartmentController::class);
-Route::resource('employee', App\Http\Controllers\EmployeeController::class);
-Route::resource('study', App\Http\Controllers\StudyController::class);
+Route::resource('department', \DepartmentController::class);
+Route::resource('employee', \EmployeeController::class);
+Route::resource('study', \StudyController::class);

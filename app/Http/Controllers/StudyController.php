@@ -45,9 +45,9 @@ class StudyController extends Controller
     {
         request()->validate(Study::$rules);
 
-        $study = Study::create($request->all());
+        $study = Study::create($request->all())->timestamps = false;
 
-        return redirect()->route('studies.index')
+        return redirect()->route('study.index')
             ->with('success', 'Study created successfully.');
     }
 
@@ -90,7 +90,7 @@ class StudyController extends Controller
 
         $study->update($request->all());
 
-        return redirect()->route('studies.index')
+        return redirect()->route('study.index')
             ->with('success', 'Study updated successfully');
     }
 
@@ -103,7 +103,7 @@ class StudyController extends Controller
     {
         $study = Study::find($id)->delete();
 
-        return redirect()->route('studies.index')
+        return redirect()->route('study.index')
             ->with('success', 'Study deleted successfully');
     }
 }
